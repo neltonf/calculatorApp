@@ -1,0 +1,168 @@
+:root {
+	--clr-bg: #fffff4;
+	--clr-cal-bg: #c7ceea;
+	--clr-btn-bg: #b5ead7;
+	--clr-btn-text: white;
+
+	--width: 40vw;
+	--height: 60vh;
+
+	--grid-col: 1fr;
+	--grid-row: 1fr;
+}
+
+body {
+	margin: 0;
+}
+
+main {
+	height: 100vh;
+	width: 100vw;
+	background-color: var(--clr-bg);
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.calculator-container {
+	display: grid;
+	grid-template-columns: repeat(4, var(--grid-col));
+	grid-template-rows: repeat(6, var(--grid-row));
+	gap: 0.15rem;
+	background-color: var(--clr-cal-bg);
+	border-radius: 1.5rem 1.5rem 0rem 0rem;
+	grid-template-areas:
+		'display display display display'
+		'ac div mult subt '
+		'se ei ni addi'
+		'fr fi si addi '
+		'on tw th eq'
+		'ze ze dott eq';
+}
+
+.calculator-container>* {
+	padding: 1rem;
+}
+
+.display {
+	grid-area: display;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.display-eq {
+	display: flex;
+}
+
+.display-value,
+.display-operation {
+	padding-left: 0.25rem;
+	font-size: 1.5rem;
+}
+
+.display-current {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.calculator-container button {
+	border: none;
+	cursor: pointer;
+	background-color: var(--clr-btn-bg);
+	color: var(--clr-btn-text);
+	font-weight: bolder;
+	font-size: 2em;
+}
+
+@media only screen and (max-width: 1080px) {
+
+	.display-value,
+	.display-operation {
+		padding-left: 0.25rem;
+		font-size: 1rem;
+	}
+
+	.display-current {
+		font-size: 1rem;
+	}
+
+	.calculator-container button {
+		font-weight: bolder;
+		font-size: 1em;
+	}
+}
+
+.calculator-container button:hover {
+	opacity: 0.60;
+}
+
+.ac {
+	grid-area: ac;
+}
+
+.div {
+	grid-area: div;
+}
+
+.mult {
+	grid-area: mult;
+}
+
+.sub {
+	grid-area: subt;
+}
+
+.ei {
+	grid-area: ei;
+}
+
+.ni {
+	grid-area: ni;
+}
+
+.add {
+	grid-area: addi;
+}
+
+.fr {
+	grid-area: fr;
+}
+
+.fi {
+	grid-area: fi;
+}
+
+.si {
+	grid-area: si;
+}
+
+.on {
+	grid-area: on;
+}
+
+.tw {
+	grid-area: tw;
+}
+
+.th {
+	grid-area: th;
+}
+
+.eq {
+	grid-area: eq;
+}
+
+.ze {
+	grid-area: ze;
+	border-left: 1.5rem;
+}
+
+.dot {
+	grid-area: dott;
+}
